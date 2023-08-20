@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список файлов</title>
+</head>
+<body>
+<h1>Список файлов</h1>
+
+<a href="/" style="text-decoration: none;"><-назад</a>
+<% if (files.length > 0) { %>
+    <ul>
+        <% files.forEach(function(file) { %>
+            <li>
+                <a href="/download?file=<%= file.filename %>">
+                    <%= file.filename %>
+                </a>
+            </li>
+        <% }); %>
+    </ul>
+<% } else { %>
+    <p>Файлов с таким названием не найдено.</p>
+<% } %>
+</body>
+</html>
